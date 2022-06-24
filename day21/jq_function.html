@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주요 탐색 함수</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#m1").children().css("border", "2px solid red");
+            $("#m2").children().children("span").css("border", "3px solid orange");
+            $("#m2 span").parent().css("border", "3px solid black");
+            $("#m4 > span.m")
+            $("#m5 > span").filter(".m").css("border", "3px solid blue");
+            $("#m6 > div").has("span").css("border", "3px solid navy");
+            $("#m6 > div").has("span").next().css("border", "3px solid navy");
+            $("#m7.d1").next().css("border", "3px solid pink");
+        });
+
+        // add() 
+        // children
+        // parent
+        // filter
+        // next
+        // has
+
+    </script>
+    <style>
+        *{margin: 5px}
+    </style>
+</head>
+<body>
+    <div id="m1">
+        <a href="#">링크1</a><span>링크2</span>
+    </div>
+    <div id="m2">
+        <span>내용1</span>
+    </div>
+    <div id="m3">
+        <span>내용2</span>
+    </div>
+    <div id="m4">
+        <span>내용3</span>
+    </div>
+    <div id="m5">
+        <span class="m">내용4</span><span>내용4</span>
+    </div>
+    <div id="m6">
+        <span class="m">내용5</span><div>내용5</div>
+    </div>
+    <div id="m7">
+        <span class="d1">내용6</span>
+    </div>
+
+    <button>삭제</button>
+    <button>datach</button>    
+</body>
+</html>

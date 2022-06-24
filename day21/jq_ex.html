@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <mata charset="UTF-8">
+    <mate name="viewport" content="width=device-width, initial-scale=1.0"></mate>
+    <title>jquery</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#intro").css("background", "greenyellow");
+            $(".info").css({"border-top" : "2px solid #ccc"})
+            $("h2").css("color", "#00f");
+            $(".info").append("<p>나는 서울에 살아요.</p>");  // append 는 맨뒤에 추가
+            $(".pic").html("<img src='./images/cat.jpg'>")  // html 태그
+            $("#msg").text("오늘도 좋은 하루되세요!");   // 문자열 추가
+            $("#msg").css({
+                "color" : "red",
+                "font-weight" : "bold",
+                "font-size" : "19px"
+            })
+
+        });
+    </script>
+</head>
+<body>
+    <h2>어서오세요 방문을 환영합니다.</h2>
+    <div class="info">
+        <p id="intro">내이름은 김초엽 입니다.</p>
+    </div>
+    <div class="pic"></div>
+    <div id="msg"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 효과</title>
+    <style>
+        *{margin: 10px;}
+        div{
+            width: 100px; height: 100px;
+            background-color: #0f0;
+            margin-left: 30px;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p #start").click(function(){
+                //animate(속성, 시간)
+                $("div").animate({height: 300}, 2000);
+                $("div").animate({width: 300}, 3000);
+            });
+            $("p #stop").click(function(){
+                $("div").stop();
+            })
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </p>
+    <div></div>
+</body>
+</html>

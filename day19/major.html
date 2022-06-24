@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수강 신청</title>
+    <link rel="stylesheet" href="./css/major.css">
+</head>
+<body>
+    <div id="container">
+        <h1>수강 신청</h1>
+        <form action="register.jsp" method="get" name="testForm">
+         <fieldset>
+            <legend>신청인</legend>
+            <ul>
+                <li>
+                    <label for="username" class="reg">이 름</label>
+                    <input type="text" id="username" class="input-box"
+                           name="username" autofocus>
+                </li>
+                <li>
+                    <label for="class" class="reg">학 과</label>
+                    <select name="major" id="subj" class="select"
+                            onchange="displaySelect()">
+                       <option>---- 학과 선택 ----</option>
+                       <option value="arch">건축학과</option>
+                       <option value="mecha">기계공학과</option>
+                       <option value="electric">전자공학과</option>
+                       <option value="computer">컴퓨터학과</option>
+                       <option value="chemi">화학공학과</option>
+                    </select>
+                </li>
+            </ul>
+         </fieldset>
+         <fieldset>
+             <legend>신청 과목</legend>
+             <p>이 달에 신청할 과목을 선택하세요.</p>
+             <label><input type="radio" name="subject" value="speaking">회화</label>
+             <label><input type="radio" name="subject" value="grammer">문법</label>
+             <label><input type="radio" name="subject" value="writing">작문</label>
+         </fieldset>
+         <fieldset>
+             <legend>메일링</legend>
+             <p>메일로 받고 싶은 뉴스 주제를 선택해 주세요.</p>
+             <label><input type="checkbox" name="mailing1" value="news">해외 단신</label>
+             <label><input type="checkbox" name="mailing2" value="dialog">5분 회화</label>
+             <label><input type="checkbox" name="mailing3" value="pops">모닝팝스</label>
+         </fieldset>
+        </form>
+     </div>
+
+     <script src="./js/major.js"></script>
+</body>
+</html>

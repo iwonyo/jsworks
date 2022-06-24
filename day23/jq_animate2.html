@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 효과</title>
+    <link rel="stylesheet" href="./css/style2.css">
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            var w = $("#gnb ul lu").width();
+            $("#gnb").append("<span></span>");
+            $("#gnb ul li").on("mouseenter focusin", function(){
+                var index = $(this).index();
+                console.log(index);
+
+                $(this).find("a").addClass("on");
+                $(this).siblings().find("a").removeClass("on");
+                $("#gnb span").stop().animate({
+                    left: index * w
+                }, "fast", "swing");
+            });
+            $("#gnb ul li:eq(0)").trigger("mouseenter");
+
+
+            // $("#gnb").append("<span></span>");
+            // $("#gnb ul li").on("mouseenter focusin", function(){
+            //     let idx = $(this).index();
+            //     console.log(idx);
+            //     $(this).find("a").addClass("on");
+            //     $(this).siblings().find("a").removeClass("on");
+            //     $("#gnb span").animate
+            // })
+        });
+
+    </script>
+</head>
+<body>
+    <nav id="gnb">
+        <ul>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">Javascript</a></li>
+            <li><a href="#">jquery</a></li>
+        </ul>
+    </nav>
+  
+</body>
+</html>

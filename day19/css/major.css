@@ -1,0 +1,15 @@
+#container{width: 500px; margin: 10px auto;}
+fieldset{margin-bottom: 25px;}
+legend{font-size: 15px; font-weight: 700; margin-left: 10px;}
+ul li{list-style: none; margin: 15px; font-size: 14px;}
+.reg{
+    width: 80px;
+    float: left;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 15px;
+    color: #390;
+    font-weight: bold;
+}
+.input-box{width: 190px; height: 25px;}
+.select{width: 200px; height: 30px;}

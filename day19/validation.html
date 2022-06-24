@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유효성 검사</title>
+    <script>
+        function checkLogin(){
+           let login = document.login;  //폼 이름에 변수 할당
+           let id = login.id;  //id 변수
+           let pw = login.pw;  //password 변수
+
+           if(id.value.length < 4 || id.value.length > 15){
+              alert("아이디를 4 ~ 15자 영문과 숫자로 입력");
+              id.focus();   //document.login.id.focus();
+              return false; //함수를 종료하고 전송을 막아줌
+           }else if(pw.value == ""){
+              alert("비밀번호를 입력해주세요!!");
+              pw.focus();   //document.login.id.focus();
+              return false;
+           }else{
+               login.submit();  //폼에 전송함
+           }
+        }
+    </script>
+</head>
+<body>
+    <form action="login.jsp" method="post" name="login">
+        <div>
+            <label for="id">아이디</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <div>
+            <label for="pw">비밀번호</label>
+            <input type="password" id="pw" name="pw">
+        </div>
+        <div>
+            <input type="button" value="확인" onclick="checkLogin();">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./css/mousemove.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //event 객체
+          $(".subject").mousemove(function(event){
+              let x = event.pageX;  //x 좌표
+              let y = event.pageY;  //y 좌표
+              //console.log(x, y);
+              $(".tip").css({left: x+10, top: y-40})
+                       .addClass("on");
+          }).mouseleave(function(){
+              $(".tip").removeClass("on");
+          })
+        });
+    </script>
+</head>
+<body>
+    <div class="subject">학습할 과목</div>
+    <div class="tip">html, css, javascript, jQuery</div>
+</body>
+</html>

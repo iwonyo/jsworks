@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역 변수의 유효 범위</title>
+</head>
+<body>
+    <h3>전역 변수의 유효 범위</h3>
+
+    <script>
+        let x = 1;  //전역 변수
+        function oneUp(){
+            x = x + 1;
+            return x;
+        }
+
+        console.log(oneUp()); // x=2
+        console.log(oneUp()); // x=3
+        console.log(oneUp()); // x=4
+    </script>
+</body>
+</html>

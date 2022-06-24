@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick 속성</title>
+</head>
+<body> 
+    <button type="button" onclick="fnCheck()">
+        로그인</button>
+    <p id="demo"></p>
+    <script>
+        function fnCheck(){
+            //alert("아이디나 비밀번호를 확인해주세요");
+            // document.write("아이디나 비밀번호를 확인해주세요");
+            // getElementById("id 이름") - 함수
+            //innerHTML - html을 적용하는 속성(property)
+            let str = "아이디나 비밀번호를 확인해주세요";
+            // document.getElementById("demo").innerHTML = str;
+            document.getElementById("demo").innerHTML = str;
+
+            //색상 스타일 변경
+            document.getElementById("demo").style.color = "red";
+
+        }
+    </script>
+</body>
+</html>

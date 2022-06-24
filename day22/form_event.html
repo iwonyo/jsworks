@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 이벤트</title>
+    <style>
+        *{margin: 5px;}
+        input[type="text"].on{
+            background: #f60;
+            color: aliceblue;
+        }
+        p{color: blueviolet;}
+
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#m1 input").focus(function(){
+                $(this).addClass("on");
+            }).blur(function(){
+                $(this).removeClass("on");
+            });
+            $("#m2").focusin(function(){
+                $(this).children().addClass("on");
+            }).focusout(function(){
+                $(this).children().removeClass("on");
+            });
+            $("#m3 > input").change(function(){
+                let c = confirm("값을 바꾸시겠습니까?");
+                if(!c){
+                    $(this).val(10);
+                }
+            });
+            $("#m3 > input").change(function(){
+                let v = $(this).val();
+                let size = v.length;
+                alert(v + " 총" + size + "문자를 선택하셨습니다.");
+            });
+
+
+            $(".frm").submit(function(){
+                if(!$("#id").val()){
+                    $(".msg1").css("display", "block");
+                    $("#id").focus();
+                    return false;
+                }else{
+                    $(".msg1").css("display", "none");
+                }
+
+                if(!$("#pw").val()){
+                    $(".msg2").css("display", "block");
+                    $("#pw").focus();
+                    return false;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="m1">
+        <input type="text" placeholder="값을 입력하세요.">
+    </div>
+    <div id="m2">
+        <input type="text" placeholder="값을 입력하세요.">
+    </div>
+    <div id="m3">
+        <span>값을 수정한 후 다음 입력요소로 이동하세요.</span>
+        <input type="text" value="">
+    </div>
+    <form action="#" method="post" class="frm">
+        <fieldset>
+            <legend>로그인</legend>
+            <div>
+                <label for="id">아이디</label>
+                <input type="text" id="id">
+            </div>
+            <p class="msg1">아이디를 입력하세요.</p>
+            <div>
+                <label for="pw">비밀번호</label>
+                <input type="password" id="pw">
+            </div>
+            <p class="msg2">비밀번호를 입력하세요.</p>
+            <button>전송</button>
+        </fieldset>
+    </form>
+</body>
+</html>
